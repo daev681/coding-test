@@ -13,10 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\LEVEL1">
+      <UniqueIdentifier>{eaea3037-16c3-4b88-ac2f-23f6d498d932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LEVEL2">
+      <UniqueIdentifier>{b307bd9d-68ab-41a7-9171-e59bb13894c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\LEVEL3">
+      <UniqueIdentifier>{88753683-7003-4a5e-a62c-fe1d3a194053}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="coding-Test.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="stack-1.cpp">
+      <Filter>소스 파일\LEVEL1</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
