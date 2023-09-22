@@ -15,8 +15,8 @@ int solution(vector<vector<string>> clothes) {
     }
 
     int result = 1;
-    // 각 의상 종류별로 (의상의 개수 + 1)을 곱한다.
-    for (const auto& pair : counts) {
+    // 각 의상 종류별로 (의상의 개수 + 1)을 곱한다.  !! (a+1)(b+1)(c+1) -1 공식
+    for (const auto& pair : counts) { 
         result *= (pair.second + 1);
     }
 
