@@ -31,7 +31,10 @@
     <ClCompile Include="LEVEL1\stack-1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="LEVEL2\map-1.cpp">
+    <ClCompile Include="LEVEL2\Clothes.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LEVEL2\Process.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
