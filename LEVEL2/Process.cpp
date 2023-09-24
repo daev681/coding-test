@@ -8,46 +8,45 @@
 //[2, 1, 3, 2]	2	1
 //[1, 1, 9, 1, 1, 1]	0	5
 
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
 int solution(vector<int> priorities, int location) {
-
-    int sign = 0;
     int answer = 0;
-    int location_value = priorities[location];
-    int size = priorities.size();
-    queue<int> q;
-    stack<int> s;
+    queue<pair<int, int>> q; // pair의 첫 번째 요소는 우선순위, 두 번째 요소는 인덱스
 
     for (int i = 0; i < priorities.size(); i++) {
-        if (location != i) {
-            q.push(priorities[i]);
-        }
+        q.push({ priorities[i], i });
     }
 
     while (!q.empty()) {
-        int old_value = q.front();
-        if (old_value < location_value) {
-            size--;       // 큐에서 맨 앞 요소 제거
-            sign = 0;
-        }
-        else {
-            sign = 1;
-        }
+        int current_priority = q.front().first;
+        int current_index = q.front().second;
         q.pop();
-        if (sign == 1) {
-            int new_value = q.front();
-            if (old_value == new_value) {
-                size--;
 
+        bool can_print = true;
+
+        // 현재 문서보다 우선순위가 높은 문서가 있는지 확인
+        for (auto item : q) {
+            if (item.first > current_priority) {
+                can_print = false;
+                break;
             }
         }
 
-
+        if (can_print) {
+            answer++;
+            if (current_index == location) {
+                break; // 주어진 위치의 문서가 출력되었으므로 종료
+            }
+        }
+        else {
+            q.push({ current_priority, current_index }); // 현재 문서를 다시 큐에 넣음
+        }
     }
 
-    return size;
-
+    return answer;
 }
+
