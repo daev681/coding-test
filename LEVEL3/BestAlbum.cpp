@@ -23,20 +23,58 @@
 #include <vector>
 #include <map>
 #include <utility> // std::make_pair 함수를 사용하기 위한 헤더
+#include <iostream>
 
 using namespace std;
 
 vector<int> solution(vector<string> genres, vector<int> plays) {
 
-    map<string, pair<int, int>> totalMap; // 전체 토탈 맵
-    map<string, int> playMap; // 플레이 맵
+    map<string, pair<int, int>> total_map; // 전체 토탈 맵
+    map<string, int> play_map; // 플레이 맵
+
 
     for (int i = 0; i < genres.size(); i++) {
-        playMap[genres[i]] = plays[i];
+        auto it = play_map.find(genres[i]);
+        play_map[genres[i]] = plays[i];
+        if (it != play_map.end()) { // 중복
+            int genres_count = total_map[genres[i]].first;
+            int plays_sum = total_map[genres[i]].second;
+            genres_count++;
+            plays_sum += plays[i];
+            auto delete_key = total_map.find(genres[i]); // 삭제할 키
+            total_map.erase(delete_key); // 키를 삭제 
+            total_map[genres[i]] = make_pair(genres_count, plays_sum);
+        }
+        else { // 중복아님
+            total_map[genres[i]] = make_pair(1, plays[i]);
+        }
     }
 
-    totalMap[genres[i]] = make_pair(plays[i], "Alice");
+    for (const auto& pair : total_map) {
+        const std::string& key = pair.first;
+        const std::pair<int, int>& values = pair.second;
+        int firstValue = values.first;
+        int secondValue = values.second;
 
+        //  std::cout << "키: " << key << ", 값1: " << firstValue << ", 값2: " << secondValue << std::endl;
+    }
+    for (int i = 0; i < genres.size(); i++) {
+
+        auto it = total_map.find(genres[i]);
+        if (it != total_map.end()) {
+            answer[i] = i;
+        }
+        else {
+
+        }
+
+
+
+    }
+
+    for (const auto& pair : play_map) {
+        std::cout << "키: " << pair.first << ", 값: " << pair.second << std::endl;
+    }
 
     vector<int> answer;
     return answer;
