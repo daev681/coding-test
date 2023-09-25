@@ -139,6 +139,7 @@
     <ClCompile Include="LEVEL1\stack-1.cpp" />
     <ClCompile Include="LEVEL2\Clothes.cpp" />
     <ClCompile Include="LEVEL2\Process.cpp" />
+    <ClCompile Include="LEVEL3\BestAlbum.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
