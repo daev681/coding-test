@@ -31,7 +31,9 @@ vector<int> solution(vector<string> genres, vector<int> plays) {
 
     map<string, pair<int, int>> total_map; // ¿¸√º ≈‰≈ª ∏ 
     map<string, int> play_map; // «√∑π¿Ã ∏ 
+    map<string, int> count_map; // «√∑π¿Ã ∏ 
 
+    vector<int> answer;
 
     for (int i = 0; i < genres.size(); i++) {
         auto it = play_map.find(genres[i]);
@@ -58,24 +60,20 @@ vector<int> solution(vector<string> genres, vector<int> plays) {
 
         //  std::cout << "≈∞: " << key << ", ∞™1: " << firstValue << ", ∞™2: " << secondValue << std::endl;
     }
+
+  
     for (int i = 0; i < genres.size(); i++) {
 
-        auto it = total_map.find(genres[i]);
-        if (it != total_map.end()) {
-            answer[i] = i;
-        }
-        else {
 
-        }
-
-
-
+       if (total_map.find(genres[i]) != total_map.end() && count_map[genres[i]] != 3) {
+           count_map[genres[i]]++;
+           answer.push_back(plays[i]);
+       }
     }
 
     for (const auto& pair : play_map) {
         std::cout << "≈∞: " << pair.first << ", ∞™: " << pair.second << std::endl;
     }
 
-    vector<int> answer;
     return answer;
 }
