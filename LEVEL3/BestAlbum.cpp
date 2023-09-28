@@ -26,54 +26,49 @@
 #include <iostream>
 
 using namespace std;
-
 vector<int> solution(vector<string> genres, vector<int> plays) {
-
-    map<string, pair<int, int>> total_map; // 전체 토탈 맵
-    map<string, int> play_map; // 플레이 맵
-    map<string, int> count_map; // 플레이 맵
-
     vector<int> answer;
-
+    //각 장르별로 횟수저장
+    map<string, int> music;
+    //각 장르별로 무슨노래가 몇번씩 저장됬는지
+    map<string, map<int, int>> musiclist;
+    //들어온 리스트만큼 반복
     for (int i = 0; i < genres.size(); i++) {
-        auto it = play_map.find(genres[i]);
-        play_map[genres[i]] = plays[i];
-        if (it != play_map.end()) { // 중복
-            int genres_count = total_map[genres[i]].first;
-            int plays_sum = total_map[genres[i]].second;
-            genres_count++;
-            plays_sum += plays[i];
-            auto delete_key = total_map.find(genres[i]); // 삭제할 키
-            total_map.erase(delete_key); // 키를 삭제 
-            total_map[genres[i]] = make_pair(genres_count, plays_sum);
+        //music map에 장르별로 횟수추가
+        music[genres[i]] += plays[i];
+        //musiclist map에 노래번호와 플레이횟수 추가
+        musiclist[genres[i]][i] = plays[i];
+    }
+
+    //장르가 다없어질때까지 반복
+    while (music.size() > 0) {
+        string genre{};
+        int max{ 0 };
+        //장르중에서 제일높은것 찾기
+        for (auto mu : music) {
+            if (max < mu.second) {
+                max = mu.second;
+                genre = mu.first;
+            }
         }
-        else { // 중복아님
-            total_map[genres[i]] = make_pair(1, plays[i]);
+        //2곡을 넣어야하므로 2번반복
+        for (int i = 0; i < 2; i++) {
+            int val = 0, ind = -1;
+            //노래중에서 제일높은것 찾기
+            for (auto ml : musiclist[genre]) {
+                if (val < ml.second) {
+                    val = ml.second;
+                    ind = ml.first;
+                }
+            }
+            //만약 노래가 0~1곡밖에없다면 반복문 탈출
+            if (ind == -1)    break;
+            //리턴할 리스트에 노래번호 추가
+            answer.push_back(ind);
+            musiclist[genre].erase(ind);
         }
+        //map 에서 사용한 장르삭제
+        music.erase(genre);
     }
-
-    for (const auto& pair : total_map) {
-        const std::string& key = pair.first;
-        const std::pair<int, int>& values = pair.second;
-        int firstValue = values.first;
-        int secondValue = values.second;
-
-        //  std::cout << "키: " << key << ", 값1: " << firstValue << ", 값2: " << secondValue << std::endl;
-    }
-
-  
-    for (int i = 0; i < genres.size(); i++) {
-
-
-       if (total_map.find(genres[i]) != total_map.end() && count_map[genres[i]] != 3) {
-           count_map[genres[i]]++;
-           answer.push_back(plays[i]);
-       }
-    }
-
-    for (const auto& pair : play_map) {
-        std::cout << "키: " << pair.first << ", 값: " << pair.second << std::endl;
-    }
-
     return answer;
 }
