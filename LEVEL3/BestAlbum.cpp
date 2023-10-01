@@ -1,19 +1,19 @@
-//½ºÆ®¸®¹Ö »çÀÌÆ®¿¡¼­ Àå¸£ º°·Î °¡Àå ¸¹ÀÌ Àç»ýµÈ ³ë·¡¸¦ µÎ °³¾¿ ¸ð¾Æ º£½ºÆ® ¾Ù¹üÀ» Ãâ½ÃÇÏ·Á ÇÕ´Ï´Ù.³ë·¡´Â °íÀ¯ ¹øÈ£·Î ±¸ºÐÇÏ¸ç, ³ë·¡¸¦ ¼ö·ÏÇÏ´Â ±âÁØÀº ´ÙÀ½°ú °°½À´Ï´Ù.
+//ìŠ¤íŠ¸ë¦¬ë° ì‚¬ì´íŠ¸ì—ì„œ ìž¥ë¥´ ë³„ë¡œ ê°€ìž¥ ë§Žì´ ìž¬ìƒëœ ë…¸ëž˜ë¥¼ ë‘ ê°œì”© ëª¨ì•„ ë² ìŠ¤íŠ¸ ì•¨ë²”ì„ ì¶œì‹œí•˜ë ¤ í•©ë‹ˆë‹¤.ë…¸ëž˜ëŠ” ê³ ìœ  ë²ˆí˜¸ë¡œ êµ¬ë¶„í•˜ë©°, ë…¸ëž˜ë¥¼ ìˆ˜ë¡í•˜ëŠ” ê¸°ì¤€ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.
 //
-//¼ÓÇÑ ³ë·¡°¡ ¸¹ÀÌ Àç»ýµÈ Àå¸£¸¦ ¸ÕÀú ¼ö·ÏÇÕ´Ï´Ù.
-//Àå¸£ ³»¿¡¼­ ¸¹ÀÌ Àç»ýµÈ ³ë·¡¸¦ ¸ÕÀú ¼ö·ÏÇÕ´Ï´Ù.
-//Àå¸£ ³»¿¡¼­ Àç»ý È½¼ö°¡ °°Àº ³ë·¡ Áß¿¡¼­´Â °íÀ¯ ¹øÈ£°¡ ³·Àº ³ë·¡¸¦ ¸ÕÀú ¼ö·ÏÇÕ´Ï´Ù.
-//³ë·¡ÀÇ Àå¸£¸¦ ³ªÅ¸³»´Â ¹®ÀÚ¿­ ¹è¿­ genres¿Í ³ë·¡º° Àç»ý È½¼ö¸¦ ³ªÅ¸³»´Â Á¤¼ö ¹è¿­ plays°¡ ÁÖ¾îÁú ¶§, º£½ºÆ® ¾Ù¹ü¿¡ µé¾î°¥ ³ë·¡ÀÇ °íÀ¯ ¹øÈ£¸¦ ¼ø¼­´ë·Î return ÇÏµµ·Ï solution ÇÔ¼ö¸¦ ¿Ï¼ºÇÏ¼¼¿ä.
+//ì†í•œ ë…¸ëž˜ê°€ ë§Žì´ ìž¬ìƒëœ ìž¥ë¥´ë¥¼ ë¨¼ì € ìˆ˜ë¡í•©ë‹ˆë‹¤.
+//ìž¥ë¥´ ë‚´ì—ì„œ ë§Žì´ ìž¬ìƒëœ ë…¸ëž˜ë¥¼ ë¨¼ì € ìˆ˜ë¡í•©ë‹ˆë‹¤.
+//ìž¥ë¥´ ë‚´ì—ì„œ ìž¬ìƒ íšŸìˆ˜ê°€ ê°™ì€ ë…¸ëž˜ ì¤‘ì—ì„œëŠ” ê³ ìœ  ë²ˆí˜¸ê°€ ë‚®ì€ ë…¸ëž˜ë¥¼ ë¨¼ì € ìˆ˜ë¡í•©ë‹ˆë‹¤.
+//ë…¸ëž˜ì˜ ìž¥ë¥´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë¬¸ìžì—´ ë°°ì—´ genresì™€ ë…¸ëž˜ë³„ ìž¬ìƒ íšŸìˆ˜ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì •ìˆ˜ ë°°ì—´ playsê°€ ì£¼ì–´ì§ˆ ë•Œ, ë² ìŠ¤íŠ¸ ì•¨ë²”ì— ë“¤ì–´ê°ˆ ë…¸ëž˜ì˜ ê³ ìœ  ë²ˆí˜¸ë¥¼ ìˆœì„œëŒ€ë¡œ return í•˜ë„ë¡ solution í•¨ìˆ˜ë¥¼ ì™„ì„±í•˜ì„¸ìš”.
 //
 //
-//Á¦ÇÑ»çÇ×
-//genres[i]´Â °íÀ¯¹øÈ£°¡ iÀÎ ³ë·¡ÀÇ Àå¸£ÀÔ´Ï´Ù.
-//plays[i]´Â °íÀ¯¹øÈ£°¡ iÀÎ ³ë·¡°¡ Àç»ýµÈ È½¼öÀÔ´Ï´Ù.
-//genres¿Í playsÀÇ ±æÀÌ´Â °°À¸¸ç, ÀÌ´Â 1 ÀÌ»ó 10, 000 ÀÌÇÏÀÔ´Ï´Ù.
-//Àå¸£ Á¾·ù´Â 100°³ ¹Ì¸¸ÀÔ´Ï´Ù.
-//Àå¸£¿¡ ¼ÓÇÑ °îÀÌ ÇÏ³ª¶ó¸é, ÇÏ³ªÀÇ °î¸¸ ¼±ÅÃÇÕ´Ï´Ù.
-//¸ðµç Àå¸£´Â Àç»ýµÈ È½¼ö°¡ ´Ù¸¨´Ï´Ù.
-//ÀÔÃâ·Â ¿¹
+//ì œí•œì‚¬í•­
+//genres[i]ëŠ” ê³ ìœ ë²ˆí˜¸ê°€ iì¸ ë…¸ëž˜ì˜ ìž¥ë¥´ìž…ë‹ˆë‹¤.
+//plays[i]ëŠ” ê³ ìœ ë²ˆí˜¸ê°€ iì¸ ë…¸ëž˜ê°€ ìž¬ìƒëœ íšŸìˆ˜ìž…ë‹ˆë‹¤.
+//genresì™€ playsì˜ ê¸¸ì´ëŠ” ê°™ìœ¼ë©°, ì´ëŠ” 1 ì´ìƒ 10, 000 ì´í•˜ìž…ë‹ˆë‹¤.
+//ìž¥ë¥´ ì¢…ë¥˜ëŠ” 100ê°œ ë¯¸ë§Œìž…ë‹ˆë‹¤.
+//ìž¥ë¥´ì— ì†í•œ ê³¡ì´ í•˜ë‚˜ë¼ë©´, í•˜ë‚˜ì˜ ê³¡ë§Œ ì„ íƒí•©ë‹ˆë‹¤.
+//ëª¨ë“  ìž¥ë¥´ëŠ” ìž¬ìƒëœ íšŸìˆ˜ê°€ ë‹¤ë¦…ë‹ˆë‹¤.
+//ìž…ì¶œë ¥ ì˜ˆ
 //genres	plays	return
 //["classic", "pop", "classic", "classic", "pop"][500, 600, 150, 800, 2500][4, 1, 3, 0]
 //
@@ -22,53 +22,53 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <utility> // std::make_pair ÇÔ¼ö¸¦ »ç¿ëÇÏ±â À§ÇÑ Çì´õ
-#include <iostream>
+#include <utility>
+#include <algorithm> // Include the algorithm header for sort
 
 using namespace std;
+
+// ì‚¬ìš©ìž ì •ì˜ ë¹„êµ í•¨ìˆ˜
+bool compareSongs(const pair<int, int>& a, const pair<int, int>& b) {
+    if (a.first == b.first) {
+        return a.second < b.second;
+    }
+    return a.first > b.first;
+}
+
 vector<int> solution(vector<string> genres, vector<int> plays) {
+    
+    map<string, pair<int, int>> total_map; // ì „ì²´ í† íƒˆ ë§µ
+    map<string, int> play_map; // í”Œë ˆì´ ë§µ
     vector<int> answer;
-    //°¢ Àå¸£º°·Î È½¼öÀúÀå
-    map<string, int> music;
-    //°¢ Àå¸£º°·Î ¹«½¼³ë·¡°¡ ¸î¹ø¾¿ ÀúÀå‰ç´ÂÁö
-    map<string, map<int, int>> musiclist;
-    //µé¾î¿Â ¸®½ºÆ®¸¸Å­ ¹Ýº¹
-    for (int i = 0; i < genres.size(); i++) {
-        //music map¿¡ Àå¸£º°·Î È½¼öÃß°¡
-        music[genres[i]] += plays[i];
-        //musiclist map¿¡ ³ë·¡¹øÈ£¿Í ÇÃ·¹ÀÌÈ½¼ö Ãß°¡
-        musiclist[genres[i]][i] = plays[i];
+    
+    for(int i = 0; i < genres.size(); i++){
+        auto it = play_map.find(genres[i]);
+        play_map[genres[i]] += plays[i];
     }
 
-    //Àå¸£°¡ ´Ù¾ø¾îÁú¶§±îÁö ¹Ýº¹
-    while (music.size() > 0) {
-        string genre{};
-        int max{ 0 };
-        //Àå¸£Áß¿¡¼­ Á¦ÀÏ³ôÀº°Í Ã£±â
-        for (auto mu : music) {
-            if (max < mu.second) {
-                max = mu.second;
-                genre = mu.first;
+    // í”Œë ˆì´ íšŸìˆ˜ ìˆœìœ¼ë¡œ ìž¥ë¥´ë¥¼ ì •ë ¬
+    vector<pair<string, int>> genre_play_count(play_map.begin(), play_map.end());
+    sort(genre_play_count.begin(), genre_play_count.end(), [](const auto& a, const auto& b) {
+        return a.second > b.second;
+    });
+
+    for (const auto& genre_count_pair : genre_play_count) {
+        const string& genre = genre_count_pair.first;
+        // í•´ë‹¹ ìž¥ë¥´ì˜ ë…¸ëž˜ë¥¼ í”Œë ˆì´ íšŸìˆ˜ê°€ ë†’ì€ ìˆœìœ¼ë¡œ ìµœëŒ€ 2ê°œê¹Œì§€ answerì— ì¶”ê°€
+        vector<pair<int, int>> song_info; // <í”Œë ˆì´ íšŸìˆ˜, ë…¸ëž˜ ì¸ë±ìŠ¤> ì •ë³´ ì €ìž¥
+        for (int i = 0; i < genres.size(); i++) {
+            if (genres[i] == genre) {
+                song_info.push_back({plays[i], i});
             }
         }
-        //2°îÀ» ³Ö¾î¾ßÇÏ¹Ç·Î 2¹ø¹Ýº¹
-        for (int i = 0; i < 2; i++) {
-            int val = 0, ind = -1;
-            //³ë·¡Áß¿¡¼­ Á¦ÀÏ³ôÀº°Í Ã£±â
-            for (auto ml : musiclist[genre]) {
-                if (val < ml.second) {
-                    val = ml.second;
-                    ind = ml.first;
-                }
-            }
-            //¸¸¾à ³ë·¡°¡ 0~1°î¹Û¿¡¾ø´Ù¸é ¹Ýº¹¹® Å»Ãâ
-            if (ind == -1)    break;
-            //¸®ÅÏÇÒ ¸®½ºÆ®¿¡ ³ë·¡¹øÈ£ Ãß°¡
-            answer.push_back(ind);
-            musiclist[genre].erase(ind);
+
+        // ì‚¬ìš©ìž ì •ì˜ ë¹„êµ í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ë…¸ëž˜ë¥¼ ì •ë ¬
+        sort(song_info.begin(), song_info.end(), compareSongs);
+
+        for (int i = 0; i < min(2, (int)song_info.size()); i++) {
+            answer.push_back(song_info[i].second);
         }
-        //map ¿¡¼­ »ç¿ëÇÑ Àå¸£»èÁ¦
-        music.erase(genre);
     }
+    
     return answer;
 }
