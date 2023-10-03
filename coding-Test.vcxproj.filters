@@ -40,5 +40,8 @@
     <ClCompile Include="LEVEL3\BestAlbum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LEVEL2\H-index.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
