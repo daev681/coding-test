@@ -26,21 +26,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="folder" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="coding-Test.aps" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LEVEL1\stack-1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LEVEL2\Clothes.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LEVEL2\Process.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LEVEL3\BestAlbum.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LEVEL2\H-index.cpp">
+    <ClCompile Include="LEVEL2\TruckBridge.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
