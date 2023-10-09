@@ -13,8 +13,8 @@ int main() {
     int bridge_length1 = 2;
     int weight1 = 10;
     vector<int> truck_weights1 = { 7, 4, 5, 6 };
-    int result1 = solution(bridge_length1, weight1, truck_weights1);
-    cout << "Test case 1 result: " << result1 << endl;
+    //int result1 = solution(bridge_length1, weight1, truck_weights1);
+    // cout << "Test case 1 result: " << result1 << endl;
 
     // Test case 2
     int bridge_length2 = 100;
