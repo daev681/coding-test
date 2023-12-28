@@ -1,6 +1,11 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+using namespace std;
+
 #include<algorithm>
-#include <functional>         // greater ì‚¬ìš© ìœ„í•´ í•„ìš”  
+#include <functional>         // greater »ç¿ë À§ÇØ ÇÊ¿ä  
 #include <vector>
 #include<queue>
 using namespace std;
@@ -36,18 +41,14 @@ int main() {
 
 int solution(int bridge_length, int weight, vector<int> truck_weights) {
     int answer = 0;
-    queue<int> waiting;
-    queue<int> running;
+    queue<pair<int, int>> running;
+    int i = 0;
+    int current_weight = 0;
 
-    for (int i = 0; i < truck_weights.size(); i++) {
-        waiting.push(truck_weights[i]);
-    }
+    while (i < truck_weights.size() || !running.empty()) {
+        answer++;
 
-    int running_weight = 0;
-    while (!waiting.empty() || !running.empty()) {
-        int wait_front = waiting.empty() ? 0 : waiting.front();
-
-        if (running.size() < bridge_length  && wait_front != 0) {
+        if (running.size() != 0 && running.size() != bridge_length && wait_front != 0) {
             int check = running_weight + wait_front;
             if (check >= weight) {
                 running_weight -= running.front();
@@ -67,10 +68,11 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
             running_weight += wait_front;
             answer++;
         }
-        else {
-            running_weight -= running.front();
-            running.pop();
-            answer++;
+
+        if (i < truck_weights.size() && current_weight + truck_weights[i] <= weight) {
+            current_weight += truck_weights[i];
+            running.push(make_pair(truck_weights[i], answer));
+            i++;
         }
     }
 
