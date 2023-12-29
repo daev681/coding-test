@@ -34,7 +34,7 @@
     <ClCompile Include="LEVEL2\TruckBridge.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="LEVEL2\prime.cpp">
+    <ClCompile Include="LEVEL2\Prime.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

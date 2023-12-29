@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <set>
+#include <algorithm>
 using namespace std;
 bool isPrime(int number) {
     if (number <= 1) {
@@ -17,23 +18,29 @@ bool isPrime(int number) {
     return true;
 }
 
-int countPrimesUpTo(int limit) {
-    int count = 0;
 
-    for (int i = 2; i <= limit; ++i) {
-        if (isPrime(i)) {
-            ++count;
+void generateAllCombinations(const std::string& numberStr, int& answer) {
+    std::string tempStr = numberStr;
+    std::sort(tempStr.begin(), tempStr.end());
+    set<int> s;
+
+    do {
+        for (int len = 1; len <= tempStr.size(); ++len) {
+            int num = std::stoi(tempStr.substr(0, len));
+            cout << num << endl;
+            if (isPrime(num)) {
+                s.insert(num);
+            }
         }
-    }
-
-    return count;
+    } while (std::next_permutation(tempStr.begin(), tempStr.end()));
+    answer = s.size();
 }
 
 int solution(string numbers) {
     int answer = 0;
-    int inumbers = 0;
-    inumbers = stoi(numbers);
-    answer = countPrimesUpTo(inumbers);
+
+    generateAllCombinations(numbers, answer);
+
 
     return answer;
 }

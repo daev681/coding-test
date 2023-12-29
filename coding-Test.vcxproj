@@ -139,7 +139,7 @@
     <None Include="folder" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LEVEL2\prime.cpp" />
+    <ClCompile Include="LEVEL2\Prime.cpp" />
     <ClCompile Include="LEVEL2\TruckBridge.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
