@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int n;
+    cin >> n;
+
+    vector<int> roadLengths(n - 1, 0);
+    vector<int> fuelPrices(n, 0);
+
+    for (int i = 0; i < n - 1; i++) {
+        cin >> roadLengths[i];
+    }
+
+
+    for (int i = 0; i < n; i++) {
+        cin >> fuelPrices[i];
+    }
+
+    int answer = 0;
+    int minFuelPrice = fuelPrices[0];  
+
+    for (int i = 0; i < n - 1; i++) {
+   
+        minFuelPrice = min(minFuelPrice, fuelPrices[i]);
+
+   
+        answer += minFuelPrice * roadLengths[i];
+    }
+
+    cout << answer << endl;
+
+    return 0;
+}
