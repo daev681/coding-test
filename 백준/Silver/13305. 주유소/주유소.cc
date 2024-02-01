@@ -7,11 +7,11 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int n;
+    long long n;
     cin >> n;
 
-    vector<int> roadLengths(n - 1, 0);
-    vector<int> fuelPrices(n, 0);
+    vector<long long> roadLengths(n - 1, 0);
+    vector<long long> fuelPrices(n, 0);
 
     for (int i = 0; i < n - 1; i++) {
         cin >> roadLengths[i];
@@ -22,8 +22,8 @@ int main() {
         cin >> fuelPrices[i];
     }
 
-    int answer = 0;
-    int minFuelPrice = fuelPrices[0];  
+    long long answer = 0;
+    long long minFuelPrice = fuelPrices[0];
 
     for (int i = 0; i < n - 1; i++) {
    
