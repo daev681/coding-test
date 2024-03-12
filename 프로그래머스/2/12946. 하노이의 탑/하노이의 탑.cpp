@@ -4,13 +4,15 @@
 using namespace std;
 
 void hanoi(int n, int go, int to, vector<vector<int>>& answer) {
-    if (n == 1) {// 쌓인 원판이 한개라면 
-        answer.push_back({go, to});
-        return ;
+    if(n == 1){
+        answer.push_back({go,to});
+        return;
     }
-    hanoi(n-1, go, 6-go-to, answer);  
-    hanoi(1, go, to, answer);
-    hanoi(n-1, 6-go-to, to, answer);
+    
+    int B = 6 - go - to;
+    hanoi(n-1, go , B , answer);
+    hanoi(1, go , to , answer);
+    hanoi(n-1, B , to , answer);
 }
 
 vector<vector<int>> solution(int n) {
