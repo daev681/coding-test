@@ -409,6 +409,7 @@ std::stack<int> topological_sort(const std::vector<std::vector<int>>& adj, int n
     return result;
 }
 ```
+---
 **사용법** : 
 - `adj`는 방향 그래프의 인접 리스트입니다.
  
